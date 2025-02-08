@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Grid Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            width: 100%;
+            height: 50px;
+            background-color: black;
+            color: aliceblue;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000; /* Ensures navbar stays on top */
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li a {
+            text-decoration: none;
+            color: aliceblue;
+            font-size: large;
+        }
+
+        /* Add padding to prevent images from hiding under the navbar */
+        .content {
+            padding-top: 70px; /* Adjust to match navbar height */
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <img src="a1.png" alt="Image 1" width="800px">
+        <img src="a2.png" alt="Image 2" width="500px" style="padding: 30px;">
+        <img src="a3.png" alt="Image 3" width="500px" style="padding: 40px;">
+        <img src="a4.png" alt="Image 4" width="400px">
+    </div>
+
+</body>
+</html>
