@@ -119,45 +119,59 @@ img {
     text-align: center;
     padding: 50px 20px;
     background: #85a7cc;
+    max-height: 800px;
 }
 
 .card-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* ✅ keeps 2 cards in a row */
     gap: 20px;
     max-width: 1000px;
     margin: auto;
+    align-items: stretch; /* ✅ makes grid children equal height */
 }
 
 .card {
     display: flex;
+    flex-direction: row; /* ✅ image left, text right */
     background: white;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    height: 250px; /* ✅ fixed height so all cards match */
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.card-image {
+    width: 250px; /* ✅ fixed width for all images */
+    height: 100%; /* ✅ matches card height */
+    overflow: hidden;
 }
 
 .card-image img {
-    width: 250px;
+    width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* ✅ prevents distortion */
 }
 
 .card-content {
     padding: 20px;
     text-align: left;
-    flex-grow: 1;
+    flex: 1; /* ✅ content expands to fill space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.card-content .date {
-    color: red;
-    font-size: 14px;
+
+
+.card:hover {
+    transform: translateY(-5px);
 }
+
+
+
+
 
 .card-content h3 {
     font-size: 18px;
